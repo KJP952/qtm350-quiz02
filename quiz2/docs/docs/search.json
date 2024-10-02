@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "quiz2",
+    "section": "",
+    "text": "[Life Expectancy and GDP per Capita] [Life Expectancy and Population] [Country Analysis]"
+  },
+  {
+    "objectID": "index.html#links-to-other-website-pages",
+    "href": "index.html#links-to-other-website-pages",
+    "title": "quiz2",
+    "section": "",
+    "text": "[Life Expectancy and GDP per Capita] [Life Expectancy and Population] [Country Analysis]"
+  },
+  {
+    "objectID": "index.html#gapminder",
+    "href": "index.html#gapminder",
+    "title": "quiz2",
+    "section": "Gapminder",
+    "text": "Gapminder\nFor each of 142 countries, the package provides values for life expectancy, GDP per capita, and population, every five years, from 1952 to 2007.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "life-population.html",
+    "href": "life-population.html",
+    "title": "Life Expectancy and Population",
+    "section": "",
+    "text": "This graph analyzes the relationship between life expectancy and population.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Load the dataset\ngapminder_df = pd.read_csv('/Users/katiepark/Documents/qtm350-quiz02/gapminder.csv')\n\n# Create the scatter plot\nplt.figure(figsize=(10, 6))\nplt.scatter(gapminder_df['population_millions'], gapminder_df['life_expectancy'], alpha=0.5)\nplt.title('Life Expectancy vs Population')\nplt.xlabel('population_millions')\nplt.ylabel('Life Expectancy')\nplt.grid(True)\nplt.show()"
+  },
+  {
+    "objectID": "country.html",
+    "href": "country.html",
+    "title": "Country Analysis",
+    "section": "",
+    "text": "Analuzes changes in life expectancy, GDP per capita, and population for a specific country over time.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Load the dataset\ngapminder_df = pd.read_csv('/Users/katiepark/Documents/qtm350-quiz02/gapminder.csv')\n\nplt.figure(figsize=(10, 6))\nplt.scatter(gapminder_df['population_millions'], gapminder_df['life_expectancy'], \n            s=gapminder_df['gdp_per_capita'] / 100, alpha=0.5, c=gapminder_df['gdp_per_capita'], cmap='viridis')\n\n# Add colorbar for GDP per capita\nplt.colorbar(label='GDP per Capita')\n\n# Customize the plot\nplt.title('Life Expectancy vs Population (Bubble Size by GDP per Capita)')\nplt.xlabel('population_millions')\nplt.ylabel('Life Expectancy')\nplt.grid(True)\nplt.show()"
+  },
+  {
+    "objectID": "life-gdp.html",
+    "href": "life-gdp.html",
+    "title": "Life Expectancy and GDP per Capita",
+    "section": "",
+    "text": "This graph analyzes the relationship between life expectancy and GDP per capita.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Load the dataset\ngapminder_df = pd.read_csv('/Users/katiepark/Documents/qtm350-quiz02/gapminder.csv')\n\n# Create the scatter plot\nplt.figure(figsize=(10, 6))\nplt.scatter(gapminder_df['gdp_per_capita'], gapminder_df['life_expectancy'], alpha=0.5)\nplt.title('Life Expectancy vs GDP per Capita')\nplt.xlabel('GDP per Capita')\nplt.ylabel('Life Expectancy')\nplt.grid(True)\nplt.show()"
+  }
+]

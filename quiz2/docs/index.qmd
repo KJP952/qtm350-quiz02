@@ -1,6 +1,7 @@
 ---
 title: "quiz2"
 theme: litera
+output-dir: docs
 ---
 ## Links to other website pages
 [[Life Expectancy and GDP per Capita](docs/life-gdp.html)]
