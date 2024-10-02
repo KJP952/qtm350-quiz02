@@ -1,0 +1,25 @@
+---
+title: Country Analysis
+---
+Analuzes changes in life expectancy, GDP per capita, and population for a specific country over time.
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the dataset
+gapminder_df = pd.read_csv('/Users/katiepark/Documents/qtm350-quiz02/gapminder.csv')
+
+plt.figure(figsize=(10, 6))
+plt.scatter(gapminder_df['population_millions'], gapminder_df['life_expectancy'], 
+            s=gapminder_df['gdp_per_capita'] / 100, alpha=0.5, c=gapminder_df['gdp_per_capita'], cmap='viridis')
+
+# Add colorbar for GDP per capita
+plt.colorbar(label='GDP per Capita')
+
+# Customize the plot
+plt.title('Life Expectancy vs Population (Bubble Size by GDP per Capita)')
+plt.xlabel('population_millions')
+plt.ylabel('Life Expectancy')
+plt.grid(True)
+plt.show()
+``` 
